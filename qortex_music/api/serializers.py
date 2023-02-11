@@ -1,12 +1,20 @@
 from rest_framework import exceptions, serializers
 from rest_framework.validators import UniqueValidator
 import datetime as dt
-from albums.models import Sing
+from albums.models import Sing, Singer
 
 
 class SingSerializer(serializers.ModelSerializer):
-    """Сериализатор модели Sing."""
+    """Сериализатор для песен."""
 
     class Meta:
         model = Sing
-        fields = ('name', )
+        fields = ('id', 'name', )
+
+
+class SingerSerializer(serializers.ModelSerializer):
+    """Сериализатор для исполнителей."""
+
+    class Meta:
+        model = Singer
+        fields = ('id', 'name', )
