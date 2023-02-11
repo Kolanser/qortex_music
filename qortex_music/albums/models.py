@@ -89,7 +89,7 @@ class Album(models.Model):
     sings = models.ManyToManyField(
         Sing,
         through=AlbumSing,
-        # related_name='albums'
+        related_name='albums'
     )
 
     class Meta:
