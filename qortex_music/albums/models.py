@@ -6,7 +6,7 @@ from django.core.validators import MinValueValidator
 
 def year_validator(year):
     """Проверка что год не превышает текущий."""
-    if year > dt.datetime.now().year:
+    if year > dt.now().year:
         raise ValidationError(
             'Год выхода альбома не может превышать текущий.'
         )
@@ -16,7 +16,8 @@ def year_validator(year):
 class Singer(models.Model):
     name = models.CharField(
         max_length=48,
-        verbose_name='Название исполнителя'
+        verbose_name='Название исполнителя',
+        unique=True,
     )
 
     class Meta:
