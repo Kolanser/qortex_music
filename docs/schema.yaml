@@ -1,0 +1,480 @@
+openapi: 3.0.2
+info:
+  title: ''
+  version: ''
+paths:
+  /api/sings/:
+    get:
+      operationId: listSings
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Sing'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createSing
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Sing'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Sing'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Sing'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Sing'
+          description: ''
+      tags:
+      - api
+  /api/sings/{id}/:
+    get:
+      operationId: retrieveSing
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u041F\u0435\u0441\u043D\
+          \u044F."
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Sing'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateSing
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u041F\u0435\u0441\u043D\
+          \u044F."
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Sing'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Sing'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Sing'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Sing'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateSing
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u041F\u0435\u0441\u043D\
+          \u044F."
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Sing'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Sing'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Sing'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Sing'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroySing
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u041F\u0435\u0441\u043D\
+          \u044F."
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+  /api/singers/:
+    get:
+      operationId: listSingers
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Singer'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createSinger
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Singer'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Singer'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Singer'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Singer'
+          description: ''
+      tags:
+      - api
+  /api/singers/{id}/:
+    get:
+      operationId: retrieveSinger
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u0418\u0441\u043F\u043E\
+          \u043B\u043D\u0438\u0442\u0435\u043B\u044C."
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Singer'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateSinger
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u0418\u0441\u043F\u043E\
+          \u043B\u043D\u0438\u0442\u0435\u043B\u044C."
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Singer'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Singer'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Singer'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Singer'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateSinger
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u0418\u0441\u043F\u043E\
+          \u043B\u043D\u0438\u0442\u0435\u043B\u044C."
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Singer'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Singer'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Singer'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Singer'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroySinger
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u0418\u0441\u043F\u043E\
+          \u043B\u043D\u0438\u0442\u0435\u043B\u044C."
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+  /api/albums/:
+    get:
+      operationId: listAlbums
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Album'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createAlbum
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Album'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Album'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Album'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Album'
+          description: ''
+      tags:
+      - api
+  /api/albums/{id}/:
+    get:
+      operationId: retrieveAlbum
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u0410\u043B\u044C\u0431\
+          \u043E\u043C."
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Album'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateAlbum
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u0410\u043B\u044C\u0431\
+          \u043E\u043C."
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Album'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Album'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Album'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Album'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateAlbum
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u0410\u043B\u044C\u0431\
+          \u043E\u043C."
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Album'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Album'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Album'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Album'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyAlbum
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: "A unique integer value identifying this \u0410\u043B\u044C\u0431\
+          \u043E\u043C."
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+components:
+  schemas:
+    Sing:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 48
+      required:
+      - name
+    Singer:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 48
+      required:
+      - name
+    Album:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 48
+        year:
+          type: integer
+        singer:
+          type: string
+        sings:
+          type: array
+          items:
+            type: object
+            properties:
+              id_sing:
+                type: string
+              name:
+                type: string
+                readOnly: true
+              number_sing:
+                type: integer
+                minimum: 1
+            required:
+            - id_sing
+            - number_sing
+      required:
+      - name
+      - year
+      - singer
+      - sings

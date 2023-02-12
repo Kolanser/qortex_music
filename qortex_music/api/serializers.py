@@ -42,7 +42,31 @@ class AlbumSingSerializers(serializers.ModelSerializer):
     class Meta:
         model = AlbumSing
         fields = ('id_sing', 'name', 'number_sing')
-        read_only_fields = ('name', )
+
+    def validate(self, attrs):
+        """Проверка данных."""
+        album = attrs.get('album')
+        sing = attrs.get('sing')
+        number_sing = attrs.get('number_sing')
+        if AlbumSing.objects.filter(
+            album=album,
+            sing=sing
+        ).exists():
+            raise serializers.ValidationError(
+                (
+                    'Такая песня уже есть в альбоме.'
+                )
+            )
+        if AlbumSing.objects.filter(
+            album=album,
+            number_sing=number_sing
+        ).exists():
+            raise serializers.ValidationError(
+                (
+                    'Этот порядковый номер уже использован для другой песни.'
+                )
+            )
+        return super().validate(attrs)
 
 
 class AlbumSerializer(serializers.ModelSerializer):

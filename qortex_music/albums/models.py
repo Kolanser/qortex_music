@@ -57,7 +57,6 @@ class AlbumSing(models.Model):
         verbose_name='Песня'
     )
     number_sing = models.PositiveIntegerField(
-        default=1,
         validators=[
             MinValueValidator(1)
         ],
