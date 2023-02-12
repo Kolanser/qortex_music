@@ -1,6 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
-from albums.models import Sing, Singer
-from .serializers import SingSerializer, SingerSerializer
+from albums.models import Album, Sing, Singer
+from .serializers import AlbumSerializer, SingSerializer, SingerSerializer
 
 
 class SingViewSet(ModelViewSet):
@@ -11,3 +11,8 @@ class SingViewSet(ModelViewSet):
 class SingerViewSet(ModelViewSet):
     queryset = Singer.objects.all()
     serializer_class = SingerSerializer
+
+
+class AlbumViewSet(ModelViewSet):
+    queryset = Album.objects.all()
+    serializer_class = AlbumSerializer
