@@ -19,6 +19,7 @@ class AlbumSing(admin.ModelAdmin):
 class Album(admin.ModelAdmin):
     """Админка для альбомов."""
     list_display = (
+        'id',
         'name',
         'year',
         'singer',
@@ -28,9 +29,10 @@ class Album(admin.ModelAdmin):
 
 
 @admin.register(Sing)
-class Album(admin.ModelAdmin):
+class Sing(admin.ModelAdmin):
     """Админка для альбомов."""
     list_display = (
+        'id',
         'name',
     )
     search_fields = ('name',)
@@ -38,9 +40,10 @@ class Album(admin.ModelAdmin):
 
 
 @admin.register(Singer)
-class Album(admin.ModelAdmin):
+class Singer(admin.ModelAdmin):
     """Админка для альбомов."""
     list_display = (
+        'id',
         'name',
     )
     search_fields = ('name',)

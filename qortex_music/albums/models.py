@@ -14,6 +14,7 @@ def year_validator(year):
 
 
 class Singer(models.Model):
+    """Модель исполнителя."""
     name = models.CharField(
         max_length=48,
         verbose_name='Название исполнителя',
@@ -29,6 +30,7 @@ class Singer(models.Model):
 
 
 class Sing(models.Model):
+    """Модель песен."""
     name = models.CharField(
         max_length=48,
         verbose_name='Название песни'
@@ -43,6 +45,7 @@ class Sing(models.Model):
 
 
 class AlbumSing(models.Model):
+    """Модель связей альбомов, песен и их порядкового номера."""
     album = models.ForeignKey(
         'Album',
         on_delete=models.CASCADE,
@@ -77,6 +80,7 @@ class AlbumSing(models.Model):
 
 
 class Album(models.Model):
+    """Модель альбома."""
     name = models.CharField(
         max_length=48,
         verbose_name='Название альбома'
@@ -99,6 +103,10 @@ class Album(models.Model):
     class Meta:
         verbose_name = 'Альбом'
         verbose_name_plural = 'Альбомы'
+        constraints = [
+            models.UniqueConstraint(fields=['name', 'year', 'singer'],
+                                    name=('unique name year singer in album')),
+        ]
 
     def __str__(self):
         return self.name
