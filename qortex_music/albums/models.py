@@ -64,9 +64,12 @@ class AlbumSing(models.Model):
     class Meta:
         ordering = ('album',)
         verbose_name = 'Связь альбома и песни'
+        verbose_name_plural = 'Связи альбомов и песен'
         constraints = [
-            models.UniqueConstraint(fields=['album', 'sing', 'number_sing'],
+            models.UniqueConstraint(fields=['album', 'sing'],
                                     name=('unique sing in album')),
+            models.UniqueConstraint(fields=['album', 'number_sing'],
+                                    name=('unique number_sing in album')),
         ]
 
     def __str__(self):
